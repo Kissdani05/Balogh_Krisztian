@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 
+const outfit = Outfit({ subsets: ["latin"], variable: "--head" });
+const inter = Inter({ subsets: ["latin"], variable: "--body" });
+
 export const metadata: Metadata = {
-  title: "Balogh Krisztian Weboldal",
-  description: "Node.js alapú weboldal scaffold Coolify és PostgreSQL támogatással"
+  title: "Kovács Péter — Villanyszerelő mester",
+  description: "Megbízható villanyszerelő mester Debrecenben. 12 éves tapasztalat, MVM-engedély, garancia minden munkára."
 };
 
 export default function RootLayout({
@@ -12,7 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="hu">
+    <html lang="hu" className={`${outfit.variable} ${inter.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body>{children}</body>
     </html>
   );
