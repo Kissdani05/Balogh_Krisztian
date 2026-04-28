@@ -6,7 +6,7 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--head" });
 const inter = Inter({ subsets: ["latin"], variable: "--body" });
 
 export const metadata: Metadata = {
-  title: "Kovács Péter — Villanyszerelő mester",
+  title: "Balogh Krisztián — Villanyszerelő mester",
   description: "Megbízható villanyszerelő mester Debrecenben. 12 éves tapasztalat, MVM-engedély, garancia minden munkára."
 };
 

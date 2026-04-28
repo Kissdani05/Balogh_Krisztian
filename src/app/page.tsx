@@ -136,7 +136,7 @@ export default function Home() {
       <nav className={scrolled ? "scrolled" : ""}>
         <div className="nav-inner">
           <a href="#" className="nav-logo">
-            Kovács Péter <span>villanyszerelő</span>
+            Balogh Krisztián <span>villanyszerelő</span>
           </a>
           <ul className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
             <li>
@@ -196,7 +196,7 @@ export default function Home() {
         <div className="hero-img reveal-right">
           <img
             src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=85&auto=format&fit=crop"
-            alt="Kovács Péter villanyszerelő munkában"
+            alt="Balogh Krisztián villanyszerelő munkában"
           />
           <div className="hero-stats" ref={statsRef}>
             <div className="hstat">
@@ -243,7 +243,7 @@ export default function Home() {
           <div className="about-content">
             <p className="section-label reveal">Rólam</p>
             <h2 className="reveal">
-              Kovács Péter<br />
+              Balogh Krisztián<br />
               <em>villanyszerelő mester</em>
             </h2>
             <p className="about-p reveal">
@@ -397,7 +397,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <div className="container footer-inner">
-          <p className="footer-name">Kovács Péter — Villanyszerelő mester</p>
+          <p className="footer-name">Balogh Krisztián — Villanyszerelő mester</p>
           <p>
             Debrecen és vonzáskörzete · <a href="tel:+36301234567">+36 30 123 4567</a>
           </p>
