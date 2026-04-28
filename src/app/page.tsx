@@ -102,27 +102,32 @@ export default function Home() {
 
   // Current section tracking for nav highlights
   useEffect(() => {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((left, right) => right.intersectionRatio - left.intersectionRatio);
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
 
-        if (visibleEntries[0]?.target.id) {
-          setCurrentSection(visibleEntries[0].target.id as (typeof NAV_ITEMS)[number]["section"]);
+    const updateCurrentSection = () => {
+      const offset = window.scrollY + window.innerHeight * 0.35;
+      let current: HTMLElement | undefined;
+
+      for (let index = sections.length - 1; index >= 0; index -= 1) {
+        if (sections[index].offsetTop <= offset) {
+          current = sections[index];
+          break;
         }
-      },
-      {
-        threshold: [0.2, 0.35, 0.5, 0.65],
-        rootMargin: "-20% 0px -55% 0px"
       }
-    );
 
-    document.querySelectorAll<HTMLElement>("section[id]").forEach((section) => {
-      sectionObserver.observe(section);
-    });
+      if (current?.id) {
+        setCurrentSection(current.id as (typeof NAV_ITEMS)[number]["section"]);
+      }
+    };
 
-    return () => sectionObserver.disconnect();
+    updateCurrentSection();
+    window.addEventListener("scroll", updateCurrentSection, { passive: true });
+    window.addEventListener("resize", updateCurrentSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateCurrentSection);
+      window.removeEventListener("resize", updateCurrentSection);
+    };
   }, []);
 
   // Counter animation
@@ -181,9 +186,6 @@ export default function Home() {
             Balogh Krisztián <span>villanyszerelő</span>
           </a>
           <ul className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
-            <li className="mobile-section-indicator">
-              Most itt vagy: <strong>{SECTION_LABELS[currentSection]}</strong>
-            </li>
             {NAV_ITEMS.map((item) => (
               <li key={item.section}>
                 <a

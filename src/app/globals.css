@@ -405,21 +405,6 @@ footer a:hover { color: var(--accent); }
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
     backdrop-filter: blur(14px);
   }
-  .mobile-section-indicator {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--mid);
-    padding: 2px 8px 8px;
-  }
-  .mobile-section-indicator strong {
-    color: var(--accent);
-    font-weight: 800;
-  }
   .nav-links.open li { width: 100%; }
   .nav-links.open a { font-size: 17px; padding: 14px 16px; display: flex; justify-content: center; width: 100%; }
   .nav-links.open a.active {
