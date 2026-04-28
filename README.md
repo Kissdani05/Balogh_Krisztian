@@ -39,12 +39,26 @@ Node.js alapú, Coolifyra kész weboldal scaffold Next.js, TypeScript, Prisma é
 
 ## Coolify deploy
 
-- Repo build root: a projekt gyökere
-- Build command: `npm run build`
-- Start command: `npm run start`
-- Port: `3000`
-- Environment variables: add `DATABASE_URL` és szükség szerint a további public env változókat
-- Docker használatnál a mellékelt `Dockerfile` elég a deployhoz
+### Beállítások a Coolify-ban:
+- **Repo build root**: a projekt gyökere (`.`)
+- **Build command**: `npm run build`
+- **Start command**: `npm run start`
+- **Port**: `3000`
+- **Environment variables**: 
+  - `DATABASE_URL` (PostgreSQL connection string, pl: `postgresql://user:pass@host:5432/dbname?schema=public`)
+  - `NEXT_PUBLIC_APP_NAME` (opcional, app neve)
+  - `NODE_ENV=production`
+
+### Docker-hez szükséges:
+- A Dockerfile már optimalizált multi-stage build-del
+- PostgreSQL adatbázis külön containerben vagy externa service-ben
+
+### Migrációk első deploykor:
+Ha ezt elsőizben deployolod és üres az adatbázis:
+```bash
+npx prisma migrate deploy
+```
+Ezt a futtatható workflow-ként/init script-ként kell egy lépésben futtatni a Coolify-ban, vagy a start előtt futtatni.
 
 ## Adatbázis
 
