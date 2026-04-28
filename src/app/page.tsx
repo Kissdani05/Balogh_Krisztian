@@ -180,9 +180,6 @@ export default function Home() {
           <a href="#" className="nav-logo">
             Balogh Krisztián <span>villanyszerelő</span>
           </a>
-          <div className="nav-status" aria-live="polite">
-            Jelenleg: <strong>{SECTION_LABELS[currentSection]}</strong>
-          </div>
           <ul className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
             {NAV_ITEMS.map((item) => (
               <li key={item.section}>
@@ -195,9 +192,6 @@ export default function Home() {
                 </a>
               </li>
             ))}
-            <li className="mobile-nav-status">
-              Jelenleg: <strong>{SECTION_LABELS[currentSection]}</strong>
-            </li>
             <li>
               <a href="#kapcsolat" className="nav-cta" onClick={() => setMobileMenuOpen(false)}>
                 📞 Hívjon most
