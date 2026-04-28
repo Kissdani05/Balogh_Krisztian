@@ -40,10 +40,27 @@ const TICKER_ITEMS = [
   "Biztosítéktábla csere", "Napelem rendszerek", "Hibaelhárítás", "LED világítás"
 ];
 
+const NAV_ITEMS = [
+  { href: "#kezdolap", label: "Kezdőlap", section: "kezdolap" },
+  { href: "#rolam", label: "Rólam", section: "rolam" },
+  { href: "#szolgaltatasok", label: "Szolgáltatások", section: "szolgaltatasok" },
+  { href: "#munkak", label: "Munkáim", section: "munkak" },
+  { href: "#kapcsolat", label: "Kapcsolat", section: "kapcsolat" }
+] as const;
+
+const SECTION_LABELS: Record<(typeof NAV_ITEMS)[number]["section"], string> = {
+  kezdolap: "Kezdőlap",
+  rolam: "Rólam",
+  szolgaltatasok: "Szolgáltatások",
+  munkak: "Munkáim",
+  kapcsolat: "Kapcsolat"
+};
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [stats, setStats] = useState([0, 0, 0]);
+  const [currentSection, setCurrentSection] = useState<(typeof NAV_ITEMS)[number]["section"]>("kezdolap");
   const statsRef = useRef<HTMLDivElement>(null);
   const countedRef = useRef(false);
 
@@ -81,6 +98,31 @@ export default function Home() {
     });
 
     return () => observer.disconnect();
+  }, []);
+
+  // Current section tracking for nav highlights
+  useEffect(() => {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((left, right) => right.intersectionRatio - left.intersectionRatio);
+
+        if (visibleEntries[0]?.target.id) {
+          setCurrentSection(visibleEntries[0].target.id as (typeof NAV_ITEMS)[number]["section"]);
+        }
+      },
+      {
+        threshold: [0.2, 0.35, 0.5, 0.65],
+        rootMargin: "-20% 0px -55% 0px"
+      }
+    );
+
+    document.querySelectorAll<HTMLElement>("section[id]").forEach((section) => {
+      sectionObserver.observe(section);
+    });
+
+    return () => sectionObserver.disconnect();
   }, []);
 
   // Counter animation
@@ -138,21 +180,23 @@ export default function Home() {
           <a href="#" className="nav-logo">
             Balogh Krisztián <span>villanyszerelő</span>
           </a>
+          <div className="nav-status" aria-live="polite">
+            Jelenleg: <strong>{SECTION_LABELS[currentSection]}</strong>
+          </div>
           <ul className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
-            <li>
-              <a href="#rolam" onClick={() => setMobileMenuOpen(false)}>
-                Rólam
-              </a>
-            </li>
-            <li>
-              <a href="#szolgaltatasok" onClick={() => setMobileMenuOpen(false)}>
-                Szolgáltatások
-              </a>
-            </li>
-            <li>
-              <a href="#munkak" onClick={() => setMobileMenuOpen(false)}>
-                Munkáim
-              </a>
+            {NAV_ITEMS.map((item) => (
+              <li key={item.section}>
+                <a
+                  href={item.href}
+                  className={currentSection === item.section ? "active" : ""}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+            <li className="mobile-nav-status">
+              Jelenleg: <strong>{SECTION_LABELS[currentSection]}</strong>
             </li>
             <li>
               <a href="#kapcsolat" className="nav-cta" onClick={() => setMobileMenuOpen(false)}>
@@ -173,7 +217,7 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="hero">
+      <section className="hero" id="kezdolap">
         <div className="hero-text">
           <p className="hero-label reveal">Budapest és vonzáskörzete</p>
           <h1 className="reveal">
