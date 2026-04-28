@@ -181,6 +181,9 @@ export default function Home() {
             Balogh Krisztián <span>villanyszerelő</span>
           </a>
           <ul className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
+            <li className="mobile-section-indicator">
+              Most itt vagy: <strong>{SECTION_LABELS[currentSection]}</strong>
+            </li>
             {NAV_ITEMS.map((item) => (
               <li key={item.section}>
                 <a

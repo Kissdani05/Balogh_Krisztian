@@ -106,6 +106,10 @@ nav.menu-open {
 }
 .nav-cta:hover { background: var(--accent2) !important; }
 
+.mobile-section-indicator {
+  display: none;
+}
+
 .burger {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer; padding: 4px;
@@ -390,19 +394,34 @@ footer a:hover { color: var(--accent); }
   .nav-links { display: none; }
   .burger { display: flex; }
   .nav-links.open {
-    display: flex; flex-direction: column; position: fixed;
-    inset: 0;
+    display: flex; flex-direction: column; position: absolute;
+    top: calc(100% + 10px); left: 20px; right: 20px;
     background: rgba(250, 249, 247, 0.99);
-    align-items: center; justify-content: center;
-    gap: 12px; z-index: 1003;
-    padding: 92px 24px 32px;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    backdrop-filter: blur(16px);
+    align-items: stretch; justify-content: flex-start;
+    gap: 10px; z-index: 1003;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(14px);
   }
-  .nav-links.open li { width: min(320px, 100%); }
-  .nav-links.open a { font-size: 18px; padding: 14px 16px; display: flex; justify-content: center; width: 100%; }
+  .mobile-section-indicator {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    padding: 2px 8px 8px;
+  }
+  .mobile-section-indicator strong {
+    color: var(--accent);
+    font-weight: 800;
+  }
+  .nav-links.open li { width: 100%; }
+  .nav-links.open a { font-size: 17px; padding: 14px 16px; display: flex; justify-content: center; width: 100%; }
   .nav-links.open a.active {
     background: rgba(224, 92, 26, 0.12);
     box-shadow: inset 0 0 0 1px rgba(224, 92, 26, 0.18);
