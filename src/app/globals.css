@@ -98,10 +98,20 @@ nav.scrolled {
 .burger {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer; padding: 4px;
+  position: relative; z-index: 1002;  
 }
 .burger span {
   width: 22px; height: 2px; background: var(--text);
   display: block; border-radius: 2px; transition: all .3s;
+}
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
 }
 
 .hero {

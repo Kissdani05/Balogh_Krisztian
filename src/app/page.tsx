@@ -161,7 +161,7 @@ export default function Home() {
             </li>
           </ul>
           <button
-            className="burger"
+            className={`burger ${mobileMenuOpen ? "open" : ""}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menü"
           >
