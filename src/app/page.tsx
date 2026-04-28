@@ -175,7 +175,7 @@ export default function Home() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-text">
-          <p className="hero-label reveal">Debrecen és vonzáskörzete</p>
+          <p className="hero-label reveal">Budapest és vonzáskörzete</p>
           <h1 className="reveal">
             Megbízható<br />
             <em>villanyszerelő</em>
@@ -247,7 +247,7 @@ export default function Home() {
               <em>villanyszerelő mester</em>
             </h2>
             <p className="about-p reveal">
-              1994 óta foglalkozom villanyszerelő munkával. Debrecenben és a város 40 km-es körzetében
+              1994 óta foglalkozom villanyszerelő munkával. Budapesten és a város 40 km-es körzetében
               dolgozom — lakásoktól, házaktól egészen irodákig és ipari létesítményekig.
             </p>
             <p className="about-p reveal">
@@ -370,7 +370,7 @@ export default function Home() {
               <div className="ccard-icon">📍</div>
               <div className="ccard-text">
                 <strong>Munkaterület</strong>
-                <span>Debrecen</span>
+                <span>Budapest</span>
                 <small>és 40 km-es körzeten belül</small>
               </div>
             </div>
@@ -399,7 +399,7 @@ export default function Home() {
         <div className="container footer-inner">
           <p className="footer-name">Balogh Krisztián — Villanyszerelő mester</p>
           <p>
-            Debrecen és vonzáskörzete · <a href="tel:+36301234567">+36 30 123 4567</a>
+            Budapest és vonzáskörzete · <a href="tel:+36301234567">+36 30 123 4567</a>
           </p>
           <p className="copy">© 2024 · Minden jog fenntartva</p>
         </div>
