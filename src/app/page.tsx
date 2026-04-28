@@ -175,7 +175,7 @@ export default function Home() {
   return (
     <>
       {/* NAV */}
-      <nav className={scrolled ? "scrolled" : ""}>
+      <nav className={scrolled || mobileMenuOpen ? "scrolled menu-open" : ""}>
         <div className="nav-inner">
           <a href="#" className="nav-logo">
             Balogh Krisztián <span>villanyszerelő</span>

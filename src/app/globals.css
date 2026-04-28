@@ -64,6 +64,11 @@ nav.scrolled {
   backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 var(--border);
 }
+nav.menu-open {
+  background: rgba(250,249,247,.99);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 1px 0 var(--border), 0 12px 40px rgba(0, 0, 0, 0.08);
+}
 .nav-inner {
   max-width: 1160px; margin: 0 auto; padding: 0 36px;
   display: flex; align-items: center; justify-content: space-between;
@@ -373,13 +378,28 @@ footer a:hover { color: var(--accent); }
 
 @media (max-width: 640px) {
   nav { padding: 10px 0; }
+  nav.scrolled,
+  nav.menu-open {
+    background: rgba(250,249,247,.99);
+  }
   .nav-links { display: none; }
   .burger { display: flex; }
   .nav-links.open {
     display: flex; flex-direction: column; position: fixed; inset: 0;
-    background: linear-gradient(180deg, rgba(250, 249, 247, 0.98), rgba(243, 241, 236, 0.98));
+    background: linear-gradient(180deg, rgba(250, 249, 247, 1), rgba(243, 241, 236, 0.99));
     align-items: center; justify-content: center;
     gap: 18px; z-index: 1001;
+  }
+  .nav-links.open::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(250, 249, 247, 0.96), rgba(243, 241, 236, 0.98));
+    pointer-events: none;
+  }
+  .nav-links.open > * {
+    position: relative;
+    z-index: 1;
   }
   .nav-links.open li { width: min(320px, calc(100vw - 48px)); }
   .nav-links.open a { font-size: 18px; padding: 12px 20px; display: flex; justify-content: center; }
