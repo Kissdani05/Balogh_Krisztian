@@ -212,20 +212,26 @@ nav.menu-open {
   margin: 0 12px;
 }
 .lang-dropdown-toggle {
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(224, 92, 26, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   font-size: 20px;
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 6px 10px;
+  border-radius: 10px;
   transition: all .2s;
-  opacity: 0.7;
+  opacity: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 40px;
 }
 .lang-dropdown-toggle:hover {
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(224, 92, 26, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 .lang-dropdown-menu {
   position: absolute;
