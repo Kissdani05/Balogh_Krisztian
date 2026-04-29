@@ -9,6 +9,7 @@ export const LANGUAGES: Record<Language, { name: string; flag: string }> = {
 export const translations = {
   hu: {
     nav: {
+      home: "Kezdőlap",
       about: "Rólam",
       services: "Szolgáltatások",
       myWork: "Munkáim",
@@ -125,6 +126,7 @@ export const translations = {
   },
   en: {
     nav: {
+      home: "Home",
       about: "About",
       services: "Services",
       myWork: "My Work",
@@ -241,6 +243,7 @@ export const translations = {
   },
   de: {
     nav: {
+      home: "Startseite",
       about: "Über mich",
       services: "Dienstleistungen",
       myWork: "Meine Arbeiten",

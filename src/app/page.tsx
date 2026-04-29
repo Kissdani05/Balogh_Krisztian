@@ -6,6 +6,8 @@ import { translations, LANGUAGES, type Language } from "@/lib/translations";
 
 const ICON_SERVICES = ["🏠", "🏭", "🔌", "💡", "☀️", "🚨"];
 
+type SectionId = "kezdolap" | "rolam" | "szolgaltatasok" | "munkak" | "kapcsolat";
+
 export default function Home() {
   const { language, setLanguage, isHydrated } = useLanguage();
   const t = translations[language];
@@ -13,6 +15,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [stats, setStats] = useState([0, 0, 0]);
+  const [currentSection, setCurrentSection] = useState<SectionId>("kezdolap");
   const statsRef = useRef<HTMLDivElement>(null);
   const countedRef = useRef(false);
 
@@ -50,6 +53,36 @@ export default function Home() {
     });
 
     return () => observer.disconnect();
+  }, []);
+
+  // Current section tracking for nav highlights
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
+
+    const updateCurrentSection = () => {
+      const offset = window.scrollY + window.innerHeight * 0.35;
+      let current: HTMLElement | undefined;
+
+      for (let index = sections.length - 1; index >= 0; index -= 1) {
+        if (sections[index].offsetTop <= offset) {
+          current = sections[index];
+          break;
+        }
+      }
+
+      if (current?.id) {
+        setCurrentSection(current.id as SectionId);
+      }
+    };
+
+    updateCurrentSection();
+    window.addEventListener("scroll", updateCurrentSection, { passive: true });
+    window.addEventListener("resize", updateCurrentSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateCurrentSection);
+      window.removeEventListener("resize", updateCurrentSection);
+    };
   }, []);
 
   // Counter animation
@@ -109,22 +142,47 @@ export default function Home() {
           </a>
           <ul className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
             <li>
-              <a href="#rolam" onClick={() => setMobileMenuOpen(false)}>
+              <a 
+                href="#kezdolap" 
+                className={currentSection === "kezdolap" ? "active" : ""}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t.nav.home}
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#rolam" 
+                className={currentSection === "rolam" ? "active" : ""}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {t.nav.about}
               </a>
             </li>
             <li>
-              <a href="#szolgaltatasok" onClick={() => setMobileMenuOpen(false)}>
+              <a 
+                href="#szolgaltatasok"
+                className={currentSection === "szolgaltatasok" ? "active" : ""}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {t.nav.services}
               </a>
             </li>
             <li>
-              <a href="#munkak" onClick={() => setMobileMenuOpen(false)}>
+              <a 
+                href="#munkak"
+                className={currentSection === "munkak" ? "active" : ""}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {t.nav.myWork}
               </a>
             </li>
             <li>
-              <a href="#kapcsolat" className="nav-cta" onClick={() => setMobileMenuOpen(false)}>
+              <a 
+                href="#kapcsolat" 
+                className={`nav-cta ${currentSection === "kapcsolat" ? "active" : ""}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {t.nav.callNow}
               </a>
             </li>
