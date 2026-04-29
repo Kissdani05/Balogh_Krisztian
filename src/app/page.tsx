@@ -180,6 +180,15 @@ export default function Home() {
             <li>
               <a 
                 href="#kapcsolat" 
+                className={currentSection === "kapcsolat" ? "active" : ""}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t.nav.contact}
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#kapcsolat" 
                 className={`nav-cta ${currentSection === "kapcsolat" ? "active" : ""}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
