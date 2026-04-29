@@ -16,6 +16,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [stats, setStats] = useState([0, 0, 0]);
   const [currentSection, setCurrentSection] = useState<SectionId>("kezdolap");
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
   const countedRef = useRef(false);
 
@@ -33,6 +34,19 @@ export default function Home() {
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
   }, [mobileMenuOpen]);
+
+  // Close language dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (langDropdownOpen && !target.closest(".lang-switcher-dropdown")) {
+        setLangDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [langDropdownOpen]);
 
   // Scroll reveal observer
   useEffect(() => {
@@ -197,19 +211,35 @@ export default function Home() {
             </li>
           </ul>
 
-          {/* Language Switcher - Flag Icons Only */}
-          <div className="lang-switcher">
-            {(Object.keys(LANGUAGES) as Language[]).map((lang) => (
-              <button
-                key={lang}
-                onClick={() => setLanguage(lang)}
-                className={`lang-btn ${language === lang ? "active" : ""}`}
-                title={LANGUAGES[lang].name}
-                aria-label={`Switch to ${LANGUAGES[lang].name}`}
-              >
-                {LANGUAGES[lang].flag}
-              </button>
-            ))}
+          {/* Language Switcher - Dropdown Menu */}
+          <div className="lang-switcher-dropdown">
+            <button
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              className="lang-dropdown-toggle"
+              title={LANGUAGES[language].name}
+              aria-label={`Current language: ${LANGUAGES[language].name}`}
+              aria-expanded={langDropdownOpen}
+            >
+              {LANGUAGES[language].flag}
+            </button>
+            {langDropdownOpen && (
+              <div className="lang-dropdown-menu">
+                {(Object.keys(LANGUAGES) as Language[]).map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => {
+                      setLanguage(lang);
+                      setLangDropdownOpen(false);
+                    }}
+                    className={`lang-option ${language === lang ? "active" : ""}`}
+                    title={LANGUAGES[lang].name}
+                  >
+                    <span className="lang-flag">{LANGUAGES[lang].flag}</span>
+                    <span className="lang-name">{LANGUAGES[lang].name}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
           <button
             className={`burger ${mobileMenuOpen ? "open" : ""}`}
