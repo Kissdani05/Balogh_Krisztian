@@ -1,66 +1,18 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useLanguage } from "@/lib/useLanguage";
+import { translations, LANGUAGES, type Language } from "@/lib/translations";
 
-const SERVICES = [
-  {
-    icon: "🏠",
-    title: "Lakóépületi villanyszerelés",
-    desc: "Teljes körű elektromos rendszerek tervezése, kivitelezése és felújítása új vagy meglévő lakásokban, házakban."
-  },
-  {
-    icon: "🏭",
-    title: "Ipari és kereskedelmi",
-    desc: "Irodák, üzemek, üzlethelyiségek elektromos hálózatának kiépítése és karbantartása."
-  },
-  {
-    icon: "🔌",
-    title: "Elosztótábla csere",
-    desc: "Főelosztók, alelosztók cseréje és bővítése, hibaáram-védők, túlfeszültség-védelmi rendszerek telepítése."
-  },
-  {
-    icon: "💡",
-    title: "Világítástechnika",
-    desc: "Beltéri és kültéri világítás tervezése és szerelése, energiatakarékos LED rendszerek kialakítása."
-  },
-  {
-    icon: "☀️",
-    title: "Napelem és töltőállomás",
-    desc: "Fotovoltaikus rendszerek hálózatra kötése, inverteres telepítés, elektromos autó töltők beszerelése."
-  },
-  {
-    icon: "🚨",
-    title: "Sürgősségi hibaelhárítás",
-    desc: "Áramkimaradás, rövidzárlat, égett elosztó esetén gyors kiszállás — szükség esetén hétvégén is."
-  }
-];
-
-const TICKER_ITEMS = [
-  "Lakóépületek", "Ipari létesítmények", "Okosotthon rendszerek",
-  "Biztosítéktábla csere", "Napelem rendszerek", "Hibaelhárítás", "LED világítás"
-];
-
-const NAV_ITEMS = [
-  { href: "#kezdolap", label: "Kezdőlap", section: "kezdolap" },
-  { href: "#rolam", label: "Rólam", section: "rolam" },
-  { href: "#szolgaltatasok", label: "Szolgáltatások", section: "szolgaltatasok" },
-  { href: "#munkak", label: "Munkáim", section: "munkak" },
-  { href: "#kapcsolat", label: "Kapcsolat", section: "kapcsolat" }
-] as const;
-
-const SECTION_LABELS: Record<(typeof NAV_ITEMS)[number]["section"], string> = {
-  kezdolap: "Kezdőlap",
-  rolam: "Rólam",
-  szolgaltatasok: "Szolgáltatások",
-  munkak: "Munkáim",
-  kapcsolat: "Kapcsolat"
-};
+const ICON_SERVICES = ["🏠", "🏭", "🔌", "💡", "☀️", "🚨"];
 
 export default function Home() {
+  const { language, setLanguage, isHydrated } = useLanguage();
+  const t = translations[language];
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [stats, setStats] = useState([0, 0, 0]);
-  const [currentSection, setCurrentSection] = useState<(typeof NAV_ITEMS)[number]["section"]>("kezdolap");
   const statsRef = useRef<HTMLDivElement>(null);
   const countedRef = useRef(false);
 
@@ -98,36 +50,6 @@ export default function Home() {
     });
 
     return () => observer.disconnect();
-  }, []);
-
-  // Current section tracking for nav highlights
-  useEffect(() => {
-    const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
-
-    const updateCurrentSection = () => {
-      const offset = window.scrollY + window.innerHeight * 0.35;
-      let current: HTMLElement | undefined;
-
-      for (let index = sections.length - 1; index >= 0; index -= 1) {
-        if (sections[index].offsetTop <= offset) {
-          current = sections[index];
-          break;
-        }
-      }
-
-      if (current?.id) {
-        setCurrentSection(current.id as (typeof NAV_ITEMS)[number]["section"]);
-      }
-    };
-
-    updateCurrentSection();
-    window.addEventListener("scroll", updateCurrentSection, { passive: true });
-    window.addEventListener("resize", updateCurrentSection);
-
-    return () => {
-      window.removeEventListener("scroll", updateCurrentSection);
-      window.removeEventListener("resize", updateCurrentSection);
-    };
   }, []);
 
   // Counter animation
@@ -180,29 +102,48 @@ export default function Home() {
   return (
     <>
       {/* NAV */}
-      <nav className={scrolled || mobileMenuOpen ? "scrolled menu-open" : ""}>
+      <nav className={scrolled ? "scrolled" : ""}>
         <div className="nav-inner">
           <a href="#" className="nav-logo">
             Balogh Krisztián <span>villanyszerelő</span>
           </a>
           <ul className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
-            {NAV_ITEMS.map((item) => (
-              <li key={item.section}>
-                <a
-                  href={item.href}
-                  className={currentSection === item.section ? "active" : ""}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a href="#rolam" onClick={() => setMobileMenuOpen(false)}>
+                {t.nav.about}
+              </a>
+            </li>
+            <li>
+              <a href="#szolgaltatasok" onClick={() => setMobileMenuOpen(false)}>
+                {t.nav.services}
+              </a>
+            </li>
+            <li>
+              <a href="#munkak" onClick={() => setMobileMenuOpen(false)}>
+                {t.nav.myWork}
+              </a>
+            </li>
             <li>
               <a href="#kapcsolat" className="nav-cta" onClick={() => setMobileMenuOpen(false)}>
-                📞 Hívjon most
+                {t.nav.callNow}
               </a>
             </li>
           </ul>
+
+          {/* Language Switcher - Flag Icons Only */}
+          <div className="lang-switcher">
+            {(Object.keys(LANGUAGES) as Language[]).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => setLanguage(lang)}
+                className={`lang-btn ${language === lang ? "active" : ""}`}
+                title={LANGUAGES[lang].name}
+                aria-label={`Switch to ${LANGUAGES[lang].name}`}
+              >
+                {LANGUAGES[lang].flag}
+              </button>
+            ))}
+          </div>
           <button
             className={`burger ${mobileMenuOpen ? "open" : ""}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -218,21 +159,20 @@ export default function Home() {
       {/* HERO */}
       <section className="hero" id="kezdolap">
         <div className="hero-text">
-          <p className="hero-label reveal">Budapest és vonzáskörzete</p>
+          <p className="hero-label reveal">{t.hero.location}</p>
           <h1 className="reveal">
-            Megbízható<br />
-            <em>villanyszerelő</em>
+            {t.hero.title}
             <br />
-            mester
+            <em>{t.hero.subtitle}</em>
+            <br />
+            {t.hero.master}
           </h1>
-          <p className="hero-sub reveal">
-            12 éve végzek lakóépületi és ipari villamossági munkákat. Engedéllyel, garanciával, pontosan.
-          </p>
+          <p className="hero-sub reveal">{t.hero.description}</p>
           <a href="tel:+36301234567" className="btn-call reveal">
             <span className="call-icon">📞</span>
             <div>
               <strong>+36 30 123 4567</strong>
-              <span>Hívható hétköznapokon 7–18 óráig</span>
+              <span>{t.hero.callableHours}</span>
             </div>
           </a>
         </div>
@@ -245,19 +185,19 @@ export default function Home() {
             <div className="hstat">
               <strong>{stats[0]}</strong>
               <span>+</span>
-              <p>elvégzett munka</p>
+              <p>{t.hero.completedWorks}</p>
             </div>
             <div className="hstat-div"></div>
             <div className="hstat">
               <strong>{stats[1]}</strong>
               <span>+</span>
-              <p>év tapasztalat</p>
+              <p>{t.hero.yearsExperience}</p>
             </div>
             <div className="hstat-div"></div>
             <div className="hstat">
               <strong>{stats[2]}</strong>
               <span>%</span>
-              <p>elégedett ügyfél</p>
+              <p>{t.hero.satisfiedClients}</p>
             </div>
           </div>
         </div>
@@ -266,7 +206,7 @@ export default function Home() {
       {/* TICKER */}
       <div className="ticker">
         <div className="ticker-track">
-          {TICKER_ITEMS.concat(TICKER_ITEMS).map((item, i) => (
+          {t.ticker.concat(t.ticker).map((item, i) => (
             <span key={i} className={i % 2 === 0 ? "ta" : ""}>
               {i % 2 === 0 ? `⚡ ${item}` : "·"}
             </span>
@@ -284,48 +224,42 @@ export default function Home() {
             />
           </div>
           <div className="about-content">
-            <p className="section-label reveal">Rólam</p>
+            <p className="section-label reveal">{t.about.label}</p>
             <h2 className="reveal">
-              Balogh Krisztián<br />
-              <em>villanyszerelő mester</em>
+              {t.about.name}
+              <br />
+              <em>{t.about.title}</em>
             </h2>
-            <p className="about-p reveal">
-              1994 óta foglalkozom villanyszerelő munkával. Budapesten és a város 40 km-es körzetében
-              dolgozom — lakásoktól, házaktól egészen irodákig és ipari létesítményekig.
-            </p>
-            <p className="about-p reveal">
-              Minden munkát személyesen végzek, dokumentálok és megvizsgálok. Az ügyfeleimnek fontos,
-              hogy biztonsággal beköltözhessenek vagy beköthessék az üzemet — nekem ez az elsődleges
-              szempont.
-            </p>
+            <p className="about-p reveal">{t.about.description1}</p>
+            <p className="about-p reveal">{t.about.description2}</p>
 
             <div className="badges reveal">
               <div className="badge">
                 <span className="badge-icon">✅</span>
                 <div>
-                  <strong>MVM-engedéllyel rendelkező mester</strong>
-                  <span>Hálózati csatlakozási munkák elvégzésére jogosult</span>
+                  <strong>{t.about.badges.authorized.title}</strong>
+                  <span>{t.about.badges.authorized.desc}</span>
                 </div>
               </div>
               <div className="badge">
                 <span className="badge-icon">📋</span>
                 <div>
-                  <strong>MSZ EN 60439 szabvány szerint</strong>
-                  <span>Teljeskörű dokumentáció és felülvizsgálati jegy</span>
+                  <strong>{t.about.badges.standard.title}</strong>
+                  <span>{t.about.badges.standard.desc}</span>
                 </div>
               </div>
               <div className="badge">
                 <span className="badge-icon">🛡️</span>
                 <div>
-                  <strong>Garancia minden munkára</strong>
-                  <span>Visszatérek és megoldom, ha bármi probléma adódik</span>
+                  <strong>{t.about.badges.warranty.title}</strong>
+                  <span>{t.about.badges.warranty.desc}</span>
                 </div>
               </div>
               <div className="badge">
                 <span className="badge-icon">📞</span>
                 <div>
-                  <strong>Sürgős esetben is elérhető</strong>
-                  <span>Hétvégén és ünnepnapokon is felhívható</span>
+                  <strong>{t.about.badges.available.title}</strong>
+                  <span>{t.about.badges.available.desc}</span>
                 </div>
               </div>
             </div>
@@ -337,13 +271,13 @@ export default function Home() {
       <section className="services" id="szolgaltatasok">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Amit elvállalok</p>
-            <h2>Szolgáltatások</h2>
+            <p className="section-label">{t.services.label}</p>
+            <h2>{t.services.title}</h2>
           </div>
           <div className="services-grid">
-            {SERVICES.map((service, i) => (
+            {t.services.items.map((service, i) => (
               <div key={i} className="scard reveal" style={{ transitionDelay: `${i * 0.07}s` }}>
-                <div className="scard-icon">{service.icon}</div>
+                <div className="scard-icon">{ICON_SERVICES[i]}</div>
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
               </div>
@@ -356,8 +290,8 @@ export default function Home() {
       <section className="gallery" id="munkak">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Referenciák</p>
-            <h2>Korábbi munkáim</h2>
+            <p className="section-label">{t.gallery.label}</p>
+            <h2>{t.gallery.title}</h2>
           </div>
           <div className="gallery-grid">
             <div className="gitem g-tall reveal">
@@ -365,28 +299,28 @@ export default function Home() {
                 src="https://images.unsplash.com/photo-1605152276897-4f618f831968?w=800&q=85&auto=format&fit=crop"
                 alt="Elosztótábla"
               />
-              <div className="gcap">Elosztótábla felújítás</div>
+              <div className="gcap">{t.gallery.items[0].title}</div>
             </div>
             <div className="gitem reveal">
               <img
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=85&auto=format&fit=crop"
                 alt="Irodai munka"
               />
-              <div className="gcap">Irodai hálózat kiépítés</div>
+              <div className="gcap">{t.gallery.items[1].title}</div>
             </div>
             <div className="gitem reveal">
               <img
                 src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=85&auto=format&fit=crop"
                 alt="LED világítás"
               />
-              <div className="gcap">LED világítás telepítés</div>
+              <div className="gcap">{t.gallery.items[2].title}</div>
             </div>
             <div className="gitem g-wide reveal">
               <img
                 src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=85&auto=format&fit=crop"
                 alt="Napelem"
               />
-              <div className="gcap">Napelem rendszer bekötés</div>
+              <div className="gcap">{t.gallery.items[3].title}</div>
             </div>
           </div>
         </div>
@@ -396,41 +330,41 @@ export default function Home() {
       <section className="contact" id="kapcsolat">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Elérhetőség</p>
-            <h2>Keressen bizalommal</h2>
-            <p className="section-sub reveal">Hívjon, és megbeszéljük a részleteket. Ingyenes helyszíni felmérést vállalok.</p>
+            <p className="section-label">{t.contact.label}</p>
+            <h2>{t.contact.title}</h2>
+            <p className="section-sub reveal">{t.contact.subtitle}</p>
           </div>
           <div className="contact-cards reveal">
             <a href="tel:+36301234567" className="ccard ccard-main">
               <div className="ccard-icon">📞</div>
               <div className="ccard-text">
-                <strong>Telefon</strong>
+                <strong>{t.contact.phone}</strong>
                 <span>+36 30 123 4567</span>
-                <small>Hétfő–Szombat, 7–18 óra</small>
+                <small>{t.contact.phoneTime}</small>
               </div>
             </a>
             <div className="ccard">
               <div className="ccard-icon">📍</div>
               <div className="ccard-text">
-                <strong>Munkaterület</strong>
+                <strong>{t.contact.area}</strong>
                 <span>Budapest</span>
-                <small>és 40 km-es körzeten belül</small>
+                <small>{t.contact.areaDesc}</small>
               </div>
             </div>
             <div className="ccard">
               <div className="ccard-icon">🕐</div>
               <div className="ccard-text">
-                <strong>Munkaidő</strong>
-                <span>Hétfő – Szombat</span>
-                <small>7:00 – 18:00 · Sürgős esetben hétvégén is</small>
+                <strong>{t.contact.hours}</strong>
+                <span>{t.contact.workHours}</span>
+                <small>{t.contact.workHoursDetail}</small>
               </div>
             </div>
             <div className="ccard">
               <div className="ccard-icon">💬</div>
               <div className="ccard-text">
-                <strong>Egyeztetés</strong>
-                <span>Hívjon, írjon SMS-t</span>
-                <small>Visszahívom, ha nem érek rá</small>
+                <strong>{t.contact.communication}</strong>
+                <span>{t.contact.callOrSms}</span>
+                <small>{t.contact.callBack}</small>
               </div>
             </div>
           </div>
@@ -440,11 +374,11 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <div className="container footer-inner">
-          <p className="footer-name">Balogh Krisztián — Villanyszerelő mester</p>
+          <p className="footer-name">{t.footer.name}</p>
           <p>
-            Budapest és vonzáskörzete · <a href="tel:+36301234567">+36 30 123 4567</a>
+            {t.footer.location} · <a href="tel:+36301234567">+36 30 123 4567</a>
           </p>
-          <p className="copy">© 2024 · Minden jog fenntartva</p>
+          <p className="copy">{t.footer.copyright}</p>
         </div>
       </footer>
     </>
