@@ -63,6 +63,24 @@ export const translations = {
         }
       }
     },
+    trust: {
+      label: "Fontos tudnivalók",
+      title: "Minden, amit érdemes tudni",
+      items: {
+        payment: {
+          title: "Fizetési lehetőségek",
+          desc: "Készpénz és bankkártya egyaránt elfogadva."
+        },
+        docs: {
+          title: "Engedélyek & dokumentáció",
+          desc: "MVM-engedéllyel rendelkező mester. MSZ EN 60439 szabvány szerinti kivitelezés. Minden munkához szerződés, számla és felülvizsgálati jegy."
+        },
+        warranty: {
+          title: "Garancia & felújítás",
+          desc: "Garanciát vállalok minden munkára, saját szerszámokkal. Otthon felújítást az EU egész területén vállalok — bárhol számíthat rám."
+        }
+      }
+    },
     services: {
       label: "Amit elvállalok",
       title: "Szolgáltatások",
@@ -180,6 +198,24 @@ export const translations = {
         }
       }
     },
+    trust: {
+      label: "Important information",
+      title: "Everything worth knowing",
+      items: {
+        payment: {
+          title: "Payment options",
+          desc: "Cash and bank card are both accepted."
+        },
+        docs: {
+          title: "Licenses & documentation",
+          desc: "Licensed MVM master. Execution according to MSZ EN 60439 standard. Contract, invoice and inspection record for every job."
+        },
+        warranty: {
+          title: "Warranty & renovation",
+          desc: "I provide a warranty on every job and work with my own tools. I also take on home renovation across the EU — you can count on me anywhere."
+        }
+      }
+    },
     services: {
       label: "What I undertake",
       title: "Services",
@@ -294,6 +330,24 @@ export const translations = {
         available: {
           title: "Auch in dringenden Fällen erreichbar",
           desc: "Kann an Wochenenden und Feiertagen angerufen werden"
+        }
+      }
+    },
+    trust: {
+      label: "Wichtige Informationen",
+      title: "Alles, was Sie wissen sollten",
+      items: {
+        payment: {
+          title: "Zahlungsmöglichkeiten",
+          desc: "Barzahlung und Bankkarte werden akzeptiert."
+        },
+        docs: {
+          title: "Lizenzen & Dokumentation",
+          desc: "MVM-lizenzierter Meister. Ausführung nach MSZ EN 60439 Standard. Vertrag, Rechnung und Prüfprotokoll zu jedem Auftrag."
+        },
+        warranty: {
+          title: "Garantie & Renovierung",
+          desc: "Ich gebe Garantie auf alle Arbeiten und arbeite mit eigenen Werkzeugen. Ich übernehme auch Renovierungen im gesamten EU-Gebiet — Sie können überall auf mich zählen."
         }
       }
     },

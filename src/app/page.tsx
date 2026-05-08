@@ -364,6 +364,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TRUST */}
+      <section className="trust">
+        <div className="container">
+          <div className="section-head reveal">
+            <p className="section-label">{t.trust.label}</p>
+            <h2>{t.trust.title}</h2>
+          </div>
+          <div className="services-grid trust-grid">
+            <div className="scard reveal" style={{ transitionDelay: `0s` }}>
+              <div className="scard-icon">💳</div>
+              <h3>{t.trust.items.payment.title}</h3>
+              <p>{t.trust.items.payment.desc}</p>
+              <div className="payment-badges">
+                <span className="payment-badge">VISA</span>
+                <span className="payment-badge">Mastercard</span>
+              </div>
+            </div>
+            <div className="scard reveal" style={{ transitionDelay: `0.07s` }}>
+              <div className="scard-icon">📋</div>
+              <h3>{t.trust.items.docs.title}</h3>
+              <p>{t.trust.items.docs.desc}</p>
+            </div>
+            <div className="scard reveal" style={{ transitionDelay: `0.14s` }}>
+              <div className="scard-icon">🛡️</div>
+              <h3>{t.trust.items.warranty.title}</h3>
+              <p>{t.trust.items.warranty.desc}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section className="services" id="szolgaltatasok">
         <div className="container">
