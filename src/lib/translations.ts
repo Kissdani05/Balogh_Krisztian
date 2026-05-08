@@ -25,7 +25,7 @@ export const translations = {
         europe: "Szolgáltatás Európa-szerte"
       },
       subtitle: "villanyszerelő",
-      master: "mester",
+      master: "",
       description: "12 éve végzek lakóépületi és ipari villamossági munkákat. Engedéllyel, garanciával, pontosan.",
       callableHours: "Hívható hétköznapokon 7–18 óráig",
       completedWorks: "elvégzett munka",
@@ -44,14 +44,14 @@ export const translations = {
     about: {
       label: "Rólam",
       name: "Balogh Krisztián",
-      title: "villanyszerelő mester",
+      title: "villanyszerelő",
       description1:
         "1994 óta foglalkozom villanyszerelő munkával. Budapesten és a város 40 km-es körzetében dolgozom — lakásoktól, házaktól egészen irodákig és ipari létesítményekig.",
       description2:
         "Minden munkát személyesen végzek, dokumentálok és megvizsgálok. Az ügyfeleimnek fontos, hogy biztonsággal beköltözhessenek vagy beköthessék az üzemet — nekem ez az elsődleges szempont.",
       badges: {
         authorized: {
-          title: "MVM-engedéllyel rendelkező mester",
+          title: "MVM-engedéllyel rendelkező",
           desc: "Hálózati csatlakozási munkák elvégzésére jogosult"
         },
         standard: {
@@ -78,7 +78,7 @@ export const translations = {
         },
         docs: {
           title: "Engedélyek & dokumentáció",
-          desc: "MVM-engedéllyel rendelkező mester. MSZ EN 60439 szabvány szerinti kivitelezés. Minden munkához szerződés, számla és felülvizsgálati jegy."
+          desc: "MVM-engedéllyel rendelkező. MSZ EN 60439 szabvány szerinti kivitelezés. Minden munkához szerződés, számla és felülvizsgálati jegy."
         },
         warranty: {
           title: "Garancia & felújítás",
@@ -142,7 +142,7 @@ export const translations = {
       callBack: "Visszahívom, ha nem érek rá"
     },
     footer: {
-      name: "Balogh Krisztián — Villanyszerelő mester",
+      name: "Balogh Krisztián — Villanyszerelő",
       location: "Budapest és vonzáskörzete",
       copyright: "© 2026 · Minden jog fenntartva"
     }
@@ -165,7 +165,7 @@ export const translations = {
         europe: "Service across Europe"
       },
       subtitle: "electrician",
-      master: "master",
+      master: "",
       description: "For 12 years I have been doing residential and industrial electrical work. Licensed, guaranteed, precise.",
       callableHours: "Available weekdays 7–18",
       completedWorks: "completed works",
@@ -184,14 +184,14 @@ export const translations = {
     about: {
       label: "About",
       name: "Balogh Krisztián",
-      title: "electrician master",
+      title: "electrician",
       description1:
         "I have been working as an electrician since 1994. I work in Budapest and the surrounding 40 km area — from apartments and houses to offices and industrial facilities.",
       description2:
         "I do every job personally, document and inspect it. It is important to my clients that they can move in safely or connect the operation — that is my primary concern.",
       badges: {
         authorized: {
-          title: "Licensed MVM master",
+          title: "Licensed MVM",
           desc: "Authorized to perform network connection work"
         },
         standard: {
@@ -218,7 +218,7 @@ export const translations = {
         },
         docs: {
           title: "Licenses & documentation",
-          desc: "Licensed MVM master. Execution according to MSZ EN 60439 standard. Contract, invoice and inspection record for every job."
+          desc: "Licensed MVM. Execution according to MSZ EN 60439 standard. Contract, invoice and inspection record for every job."
         },
         warranty: {
           title: "Warranty & renovation",
@@ -282,7 +282,7 @@ export const translations = {
       callBack: "I'll call back if I'm not available"
     },
     footer: {
-      name: "Balogh Krisztián — Electrician master",
+      name: "Balogh Krisztián — Electrician",
       location: "Budapest and surroundings",
       copyright: "© 2026 · All rights reserved"
     }
@@ -305,7 +305,7 @@ export const translations = {
         europe: "Service in ganz Europa"
       },
       subtitle: "Elektriker",
-      master: "Meister",
+      master: "",
       description: "Seit 12 Jahren führe ich Wohn- und Industrieelektrikerarbeiten durch. Lizenziert, garantiert, präzise.",
       callableHours: "Erreichbar werktags 7–18 Uhr",
       completedWorks: "abgeschlossene Arbeiten",
@@ -324,14 +324,14 @@ export const translations = {
     about: {
       label: "Über mich",
       name: "Balogh Krisztián",
-      title: "Elektrikermeister",
+      title: "Elektriker",
       description1:
         "Seit 1994 arbeite ich als Elektriker. Ich arbeite in Budapest und der umliegenden 40 km-Zone — von Wohnungen und Häusern bis zu Büros und Industrieanlangen.",
       description2:
         "Ich führe jede Arbeit persönlich durch, dokumentiere und prüfe sie. Meinen Kunden ist es wichtig, dass sie sicher einziehen oder den Betrieb anschließen können — das ist meine oberste Priorität.",
       badges: {
         authorized: {
-          title: "MVM-lizenzierter Meister",
+          title: "MVM-lizenziert",
           desc: "Berechtigt, Netzanschlussarbeiten durchzuführen"
         },
         standard: {
@@ -358,7 +358,7 @@ export const translations = {
         },
         docs: {
           title: "Lizenzen & Dokumentation",
-          desc: "MVM-lizenzierter Meister. Ausführung nach MSZ EN 60439 Standard. Vertrag, Rechnung und Prüfprotokoll zu jedem Auftrag."
+          desc: "MVM-lizenziert. Ausführung nach MSZ EN 60439 Standard. Vertrag, Rechnung und Prüfprotokoll zu jedem Auftrag."
         },
         warranty: {
           title: "Garantie & Renovierung",
@@ -422,7 +422,7 @@ export const translations = {
       callBack: "Ich rufe zurück, wenn ich nicht verfügbar bin"
     },
     footer: {
-      name: "Balogh Krisztián — Elektrikermeister",
+      name: "Balogh Krisztián — Elektriker",
       location: "Budapest und Umgebung",
       copyright: "© 2026 · Alle Rechte vorbehalten"
     }

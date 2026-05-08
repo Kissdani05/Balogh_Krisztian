@@ -310,8 +310,12 @@ export default function Home() {
             {t.hero.title}
             <br />
             <em>{t.hero.subtitle}</em>
-            <br />
-            {t.hero.master}
+            {t.hero.master ? (
+              <>
+                <br />
+                {t.hero.master}
+              </>
+            ) : null}
           </h1>
           <p className="hero-sub reveal">{t.hero.description}</p>
           <div className="hero-badges reveal" style={{ transitionDelay: `0.06s` }}>
@@ -557,7 +561,7 @@ export default function Home() {
       {/* FOOTER (replaced from provided template) */}
       <footer>
         <div className="container footer-inner">
-          <p className="footer-name">Balogh Krisztián — Villanyszerelő mester</p>
+          <p className="footer-name">{t.footer.name}</p>
           <p>Budapest és vonzáskörzete · <a href="tel:+36309401184">+36 30 940 1184</a></p>
           <div className="footer-socials">
             <a href="#" className="fsoc" aria-label="Facebook">
