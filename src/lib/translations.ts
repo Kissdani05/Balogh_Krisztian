@@ -51,7 +51,7 @@ export const translations = {
         "Minden munkát személyesen végzek, dokumentálok és megvizsgálok. Az ügyfeleimnek fontos, hogy biztonsággal beköltözhessenek vagy beköthessék az üzemet — nekem ez az elsődleges szempont.",
       badges: {
         authorized: {
-          title: "MVM-engedéllyel rendelkező",
+          title: "Engedéllyel rendelkező",
           desc: "Hálózati csatlakozási munkák elvégzésére jogosult"
         },
         standard: {
@@ -78,7 +78,7 @@ export const translations = {
         },
         docs: {
           title: "Engedélyek & dokumentáció",
-          desc: "MVM-engedéllyel rendelkező. MSZ EN 60439 szabvány szerinti kivitelezés. Minden munkához szerződés, számla és felülvizsgálati jegy."
+          desc: "Engedéllyel rendelkező. MSZ EN 60439 szabvány szerinti kivitelezés. Minden munkához szerződés, számla és felülvizsgálati jegy."
         },
         warranty: {
           title: "Garancia & felújítás",
@@ -191,7 +191,7 @@ export const translations = {
         "I do every job personally, document and inspect it. It is important to my clients that they can move in safely or connect the operation — that is my primary concern.",
       badges: {
         authorized: {
-          title: "Licensed MVM",
+          title: "Licensed",
           desc: "Authorized to perform network connection work"
         },
         standard: {
@@ -218,7 +218,7 @@ export const translations = {
         },
         docs: {
           title: "Licenses & documentation",
-          desc: "Licensed MVM. Execution according to MSZ EN 60439 standard. Contract, invoice and inspection record for every job."
+          desc: "Licensed. Execution according to MSZ EN 60439 standard. Contract, invoice and inspection record for every job."
         },
         warranty: {
           title: "Warranty & renovation",
@@ -331,7 +331,7 @@ export const translations = {
         "Ich führe jede Arbeit persönlich durch, dokumentiere und prüfe sie. Meinen Kunden ist es wichtig, dass sie sicher einziehen oder den Betrieb anschließen können — das ist meine oberste Priorität.",
       badges: {
         authorized: {
-          title: "MVM-lizenziert",
+          title: "Lizenziert",
           desc: "Berechtigt, Netzanschlussarbeiten durchzuführen"
         },
         standard: {
@@ -358,7 +358,7 @@ export const translations = {
         },
         docs: {
           title: "Lizenzen & Dokumentation",
-          desc: "MVM-lizenziert. Ausführung nach MSZ EN 60439 Standard. Vertrag, Rechnung und Prüfprotokoll zu jedem Auftrag."
+          desc: "Lizenziert. Ausführung nach MSZ EN 60439 Standard. Vertrag, Rechnung und Prüfprotokoll zu jedem Auftrag."
         },
         warranty: {
           title: "Garantie & Renovierung",

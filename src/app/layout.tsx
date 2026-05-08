@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--body" });
 
 export const metadata: Metadata = {
   title: "Balogh Krisztián — Villanyszerelő",
-  description: "Megbízható villanyszerelő Budapesten. 12 éves tapasztalat, MVM-engedély, garancia minden munkára."
+  description: "Megbízható villanyszerelő Budapesten. 12 éves tapasztalat, garancia minden munkára."
 };
 
 export default function RootLayout({
