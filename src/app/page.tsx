@@ -388,10 +388,6 @@ export default function Home() {
             ))}
           </div>
           <div className="services-trust">
-            <div className="section-head reveal">
-              <p className="section-label">{t.trust.label}</p>
-              <h2>{t.trust.title}</h2>
-            </div>
             <div className="services-grid trust-grid">
               <div className="scard reveal" style={{ transitionDelay: `0s` }}>
                 <div className="scard-icon">💳</div>
