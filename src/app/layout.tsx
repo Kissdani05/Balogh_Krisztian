@@ -6,8 +6,8 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--head" });
 const inter = Inter({ subsets: ["latin"], variable: "--body" });
 
 export const metadata: Metadata = {
-  title: "Balogh Krisztián — Villanyszerelő mester",
-  description: "Megbízható villanyszerelő mester Budapesten. 12 éves tapasztalat, MVM-engedély, garancia minden munkára."
+  title: "Balogh Krisztián — Villanyszerelő",
+  description: "Megbízható villanyszerelő Budapesten. 12 éves tapasztalat, MVM-engedély, garancia minden munkára."
 };
 
 export default function RootLayout({
