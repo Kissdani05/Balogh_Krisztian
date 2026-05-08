@@ -5,6 +5,13 @@ import { useLanguage } from "@/lib/useLanguage";
 import { translations, LANGUAGES, type Language } from "@/lib/translations";
 
 const ICON_SERVICES = ["🏠", "🏭", "🔌", "💡", "☀️", "🚨"];
+const FOOTER_SOCIALS = [
+  { label: "Facebook", icon: "f", href: "https://facebook.com" },
+  { label: "Instagram", icon: "◎", href: "https://instagram.com" },
+  { label: "TikTok", icon: "♪", href: "https://tiktok.com" },
+  { label: "YouTube", icon: "▶", href: "https://youtube.com" },
+  { label: "WhatsApp", icon: "✆", href: "https://whatsapp.com" }
+];
 
 type SectionId = "kezdolap" | "rolam" | "szolgaltatasok" | "munkak" | "kapcsolat";
 
@@ -364,37 +371,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST */}
-      <section className="trust">
-        <div className="container">
-          <div className="section-head reveal">
-            <p className="section-label">{t.trust.label}</p>
-            <h2>{t.trust.title}</h2>
-          </div>
-          <div className="services-grid trust-grid">
-            <div className="scard reveal" style={{ transitionDelay: `0s` }}>
-              <div className="scard-icon">💳</div>
-              <h3>{t.trust.items.payment.title}</h3>
-              <p>{t.trust.items.payment.desc}</p>
-              <div className="payment-badges">
-                <span className="payment-badge">VISA</span>
-                <span className="payment-badge">Mastercard</span>
-              </div>
-            </div>
-            <div className="scard reveal" style={{ transitionDelay: `0.07s` }}>
-              <div className="scard-icon">📋</div>
-              <h3>{t.trust.items.docs.title}</h3>
-              <p>{t.trust.items.docs.desc}</p>
-            </div>
-            <div className="scard reveal" style={{ transitionDelay: `0.14s` }}>
-              <div className="scard-icon">🛡️</div>
-              <h3>{t.trust.items.warranty.title}</h3>
-              <p>{t.trust.items.warranty.desc}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SERVICES */}
       <section className="services" id="szolgaltatasok">
         <div className="container">
@@ -410,6 +386,33 @@ export default function Home() {
                 <p>{service.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="services-trust">
+            <div className="section-head reveal">
+              <p className="section-label">{t.trust.label}</p>
+              <h2>{t.trust.title}</h2>
+            </div>
+            <div className="services-grid trust-grid">
+              <div className="scard reveal" style={{ transitionDelay: `0s` }}>
+                <div className="scard-icon">💳</div>
+                <h3>{t.trust.items.payment.title}</h3>
+                <p>{t.trust.items.payment.desc}</p>
+                <div className="payment-badges">
+                  <span className="payment-badge">VISA</span>
+                  <span className="payment-badge">Mastercard</span>
+                </div>
+              </div>
+              <div className="scard reveal" style={{ transitionDelay: `0.07s` }}>
+                <div className="scard-icon">📋</div>
+                <h3>{t.trust.items.docs.title}</h3>
+                <p>{t.trust.items.docs.desc}</p>
+              </div>
+              <div className="scard reveal" style={{ transitionDelay: `0.14s` }}>
+                <div className="scard-icon">🛡️</div>
+                <h3>{t.trust.items.warranty.title}</h3>
+                <p>{t.trust.items.warranty.desc}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -503,9 +506,26 @@ export default function Home() {
       <footer>
         <div className="container footer-inner">
           <p className="footer-name">{t.footer.name}</p>
-          <p>
-            {t.footer.location} · <a href="tel:+36301234567">+36 30 123 4567</a>
-          </p>
+          <div className="footer-top">
+            <p className="footer-meta">
+              {t.footer.location} · <a href="tel:+36301234567">+36 30 123 4567</a>
+            </p>
+            <div className="footer-socials">
+              {FOOTER_SOCIALS.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="footer-social"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={social.label}
+                  title={social.label}
+                >
+                  <span>{social.icon}</span>
+                </a>
+              ))}
+            </div>
+          </div>
           <p className="copy">{t.footer.copyright}</p>
         </div>
       </footer>
