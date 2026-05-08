@@ -314,6 +314,20 @@ export default function Home() {
             {t.hero.master}
           </h1>
           <p className="hero-sub reveal">{t.hero.description}</p>
+          <div className="hero-badges reveal" style={{ transitionDelay: `0.06s` }}>
+            <div className="hero-badge">
+              <span className="hb-icon">💳</span>
+              <span className="hb-text">{t.hero.badges.payment}</span>
+            </div>
+            <div className="hero-badge">
+              <span className="hb-icon">🔧</span>
+              <span className="hb-text">{t.hero.badges.homeProgram}</span>
+            </div>
+            <div className="hero-badge">
+              <span className="hb-icon">🌍</span>
+              <span className="hb-text">{t.hero.badges.europe}</span>
+            </div>
+          </div>
           <a href="tel:+36301234567" className="btn-call reveal">
             <span className="call-icon">📞</span>
             <div>

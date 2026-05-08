@@ -19,6 +19,11 @@ export const translations = {
     hero: {
       location: "Budapest és vonzáskörzete",
       title: "Megbízható",
+      badges: {
+        payment: "Bankkártyás fizetés lehetséges",
+        homeProgram: "Otthonfelújítási Program elfogadott",
+        europe: "Szolgáltatás Európa-szerte"
+      },
       subtitle: "villanyszerelő",
       master: "mester",
       description: "12 éve végzek lakóépületi és ipari villamossági munkákat. Engedéllyel, garanciával, pontosan.",
@@ -154,6 +159,11 @@ export const translations = {
     hero: {
       location: "Budapest and surroundings",
       title: "Reliable",
+      badges: {
+        payment: "Card payments accepted",
+        homeProgram: "Home Renovation Program accepted",
+        europe: "Service across Europe"
+      },
       subtitle: "electrician",
       master: "master",
       description: "For 12 years I have been doing residential and industrial electrical work. Licensed, guaranteed, precise.",
@@ -289,6 +299,11 @@ export const translations = {
     hero: {
       location: "Budapest und Umgebung",
       title: "Zuverlässiger",
+      badges: {
+        payment: "Kartenzahlung möglich",
+        homeProgram: "Renovierungsprogramm akzeptiert",
+        europe: "Service in ganz Europa"
+      },
       subtitle: "Elektriker",
       master: "Meister",
       description: "Seit 12 Jahren führe ich Wohn- und Industrieelektrikerarbeiten durch. Lizenziert, garantiert, präzise.",
