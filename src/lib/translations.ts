@@ -50,9 +50,13 @@ export const translations = {
       description2:
         "Minden munkát személyesen végzek, dokumentálok és megvizsgálok. Az ügyfeleimnek fontos, hogy biztonsággal beköltözhessenek vagy beköthessék az üzemet — nekem ez az elsődleges szempont.",
       badges: {
+        authorized: {
+          title: "Pontos kivitelezés",
+          desc: "Előre egyeztetett időpontban, rendezett munkaterülettel dolgozom"
+        },
         standard: {
-          title: "MSZ EN 60439 szabvány szerint",
-          desc: "Teljeskörű dokumentáció és felülvizsgálati jegy"
+          title: "Helyszíni felmérés alapján",
+          desc: "A munkát mindig egyeztetéssel és átnézett műszaki igényekkel kezdem"
         },
         warranty: {
           title: "Garancia minden munkára",
@@ -61,6 +65,24 @@ export const translations = {
         available: {
           title: "Sürgős esetben is elérhető",
           desc: "Hétvégén és ünnepnapokon is felhívható"
+        }
+      }
+    },
+    trust: {
+      label: "Fontos tudnivalók",
+      title: "Minden, amit érdemes tudni",
+      items: {
+        payment: {
+          title: "Fizetési lehetőségek",
+          desc: "Készpénz és bankkártya egyaránt elfogadva."
+        },
+        docs: {
+          title: "Átlátható átadás",
+          desc: "Minden munkát egyeztetéssel, számlával és igény szerint jegyzőkönyvvel adok át."
+        },
+        warranty: {
+          title: "Garancia & felújítás",
+          desc: "Garanciát vállalok minden munkára, saját szerszámokkal. Otthon felújítást az EU egész területén vállalok — bárhol számíthat rám."
         }
       }
     },
@@ -144,7 +166,7 @@ export const translations = {
       },
       subtitle: "electrician",
       master: "",
-      description: "For 12 years I have been doing residential and industrial electrical work. Licensed, guaranteed, precise.",
+      description: "For 12 years I have been doing residential and industrial electrical work. Careful, guaranteed, precise.",
       callableHours: "Available weekdays 7–18",
       completedWorks: "completed works",
       yearsExperience: "years experience",
@@ -168,9 +190,13 @@ export const translations = {
       description2:
         "I do every job personally, document and inspect it. It is important to my clients that they can move in safely or connect the operation — that is my primary concern.",
       badges: {
+        authorized: {
+          title: "Careful workmanship",
+          desc: "I work by appointment and keep the work area tidy"
+        },
         standard: {
-          title: "According to MSZ EN 60439 standard",
-          desc: "Complete documentation and inspection certificate"
+          title: "Based on on-site survey",
+          desc: "Every job starts with a review of the technical needs"
         },
         warranty: {
           title: "Warranty on all work",
@@ -179,6 +205,24 @@ export const translations = {
         available: {
           title: "Also available in urgent cases",
           desc: "Can be called on weekends and holidays"
+        }
+      }
+    },
+    trust: {
+      label: "Important information",
+      title: "Everything worth knowing",
+      items: {
+        payment: {
+          title: "Payment options",
+          desc: "Cash and bank card are both accepted."
+        },
+        docs: {
+          title: "Transparent handover",
+          desc: "I hand over every job with clear agreement, invoice and, if needed, a report."
+        },
+        warranty: {
+          title: "Warranty & renovation",
+          desc: "I provide a warranty on every job and work with my own tools. I also take on home renovation across the EU — you can count on me anywhere."
         }
       }
     },
@@ -262,7 +306,7 @@ export const translations = {
       },
       subtitle: "Elektriker",
       master: "",
-      description: "Seit 12 Jahren führe ich Wohn- und Industrieelektrikerarbeiten durch. Lizenziert, garantiert, präzise.",
+      description: "Seit 12 Jahren führe ich Wohn- und Industrieelektrikerarbeiten durch. Sorgfältig, garantiert, präzise.",
       callableHours: "Erreichbar werktags 7–18 Uhr",
       completedWorks: "abgeschlossene Arbeiten",
       yearsExperience: "Jahre Erfahrung",
@@ -286,9 +330,13 @@ export const translations = {
       description2:
         "Ich führe jede Arbeit persönlich durch, dokumentiere und prüfe sie. Meinen Kunden ist es wichtig, dass sie sicher einziehen oder den Betrieb anschließen können — das ist meine oberste Priorität.",
       badges: {
+        authorized: {
+          title: "Sorgfältige Ausführung",
+          desc: "Ich arbeite nach Terminvereinbarung und halte die Baustelle ordentlich"
+        },
         standard: {
-          title: "Nach MSZ EN 60439 Standard",
-          desc: "Vollständige Dokumentation und Inspektionszertifikat"
+          title: "Nach Vor-Ort-Besichtigung",
+          desc: "Jeder Auftrag beginnt mit der Prüfung des technischen Bedarfs"
         },
         warranty: {
           title: "Garantie für alle Arbeiten",
@@ -297,6 +345,24 @@ export const translations = {
         available: {
           title: "Auch in dringenden Fällen erreichbar",
           desc: "Kann an Wochenenden und Feiertagen angerufen werden"
+        }
+      }
+    },
+    trust: {
+      label: "Wichtige Informationen",
+      title: "Alles, was Sie wissen sollten",
+      items: {
+        payment: {
+          title: "Zahlungsmöglichkeiten",
+          desc: "Barzahlung und Bankkarte werden akzeptiert."
+        },
+        docs: {
+          title: "Transparente Übergabe",
+          desc: "Ich übergebe jede Arbeit mit klarer Absprache, Rechnung und bei Bedarf Protokoll."
+        },
+        warranty: {
+          title: "Garantie & Renovierung",
+          desc: "Ich gebe Garantie auf alle Arbeiten und arbeite mit eigenen Werkzeugen. Ich übernehme auch Renovierungen im gesamten EU-Gebiet — Sie können überall auf mich zählen."
         }
       }
     },
