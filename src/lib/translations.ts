@@ -144,7 +144,7 @@ export const translations = {
     footer: {
       name: "Balogh Krisztián — Villanyszerelő mester",
       location: "Budapest és vonzáskörzete",
-      copyright: "© 2024 · Minden jog fenntartva"
+      copyright: "© 2026 · Minden jog fenntartva"
     }
   },
   en: {
@@ -284,7 +284,7 @@ export const translations = {
     footer: {
       name: "Balogh Krisztián — Electrician master",
       location: "Budapest and surroundings",
-      copyright: "© 2024 · All rights reserved"
+      copyright: "© 2026 · All rights reserved"
     }
   },
   de: {
@@ -424,7 +424,7 @@ export const translations = {
     footer: {
       name: "Balogh Krisztián — Elektrikermeister",
       location: "Budapest und Umgebung",
-      copyright: "© 2024 · Alle Rechte vorbehalten"
+      copyright: "© 2026 · Alle Rechte vorbehalten"
     }
   }
 } as const;
