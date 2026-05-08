@@ -490,6 +490,15 @@ footer a:hover { color: var(--accent); }
   justify-content: center;
   align-items: center;
 }
+.fsoc {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,.12); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.4);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.fsoc svg { width: 16px; height: 16px; fill: currentColor; display: block; }
+.fsoc:hover { border-color: var(--accent); color: var(--accent); background: rgba(224,92,26,.1); }
 .footer-social {
   width: 56px;
   height: 56px;
