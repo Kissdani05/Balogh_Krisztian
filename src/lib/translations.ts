@@ -50,10 +50,6 @@ export const translations = {
       description2:
         "Minden munkát személyesen végzek, dokumentálok és megvizsgálok. Az ügyfeleimnek fontos, hogy biztonsággal beköltözhessenek vagy beköthessék az üzemet — nekem ez az elsődleges szempont.",
       badges: {
-        authorized: {
-          title: "Engedéllyel rendelkező",
-          desc: "Hálózati csatlakozási munkák elvégzésére jogosult"
-        },
         standard: {
           title: "MSZ EN 60439 szabvány szerint",
           desc: "Teljeskörű dokumentáció és felülvizsgálati jegy"
@@ -65,24 +61,6 @@ export const translations = {
         available: {
           title: "Sürgős esetben is elérhető",
           desc: "Hétvégén és ünnepnapokon is felhívható"
-        }
-      }
-    },
-    trust: {
-      label: "Fontos tudnivalók",
-      title: "Minden, amit érdemes tudni",
-      items: {
-        payment: {
-          title: "Fizetési lehetőségek",
-          desc: "Készpénz és bankkártya egyaránt elfogadva."
-        },
-        docs: {
-          title: "Engedélyek & dokumentáció",
-          desc: "Engedéllyel rendelkező. MSZ EN 60439 szabvány szerinti kivitelezés. Minden munkához szerződés, számla és felülvizsgálati jegy."
-        },
-        warranty: {
-          title: "Garancia & felújítás",
-          desc: "Garanciát vállalok minden munkára, saját szerszámokkal. Otthon felújítást az EU egész területén vállalok — bárhol számíthat rám."
         }
       }
     },
@@ -190,10 +168,6 @@ export const translations = {
       description2:
         "I do every job personally, document and inspect it. It is important to my clients that they can move in safely or connect the operation — that is my primary concern.",
       badges: {
-        authorized: {
-          title: "Licensed",
-          desc: "Authorized to perform network connection work"
-        },
         standard: {
           title: "According to MSZ EN 60439 standard",
           desc: "Complete documentation and inspection certificate"
@@ -205,24 +179,6 @@ export const translations = {
         available: {
           title: "Also available in urgent cases",
           desc: "Can be called on weekends and holidays"
-        }
-      }
-    },
-    trust: {
-      label: "Important information",
-      title: "Everything worth knowing",
-      items: {
-        payment: {
-          title: "Payment options",
-          desc: "Cash and bank card are both accepted."
-        },
-        docs: {
-          title: "Licenses & documentation",
-          desc: "Licensed. Execution according to MSZ EN 60439 standard. Contract, invoice and inspection record for every job."
-        },
-        warranty: {
-          title: "Warranty & renovation",
-          desc: "I provide a warranty on every job and work with my own tools. I also take on home renovation across the EU — you can count on me anywhere."
         }
       }
     },
@@ -330,10 +286,6 @@ export const translations = {
       description2:
         "Ich führe jede Arbeit persönlich durch, dokumentiere und prüfe sie. Meinen Kunden ist es wichtig, dass sie sicher einziehen oder den Betrieb anschließen können — das ist meine oberste Priorität.",
       badges: {
-        authorized: {
-          title: "Lizenziert",
-          desc: "Berechtigt, Netzanschlussarbeiten durchzuführen"
-        },
         standard: {
           title: "Nach MSZ EN 60439 Standard",
           desc: "Vollständige Dokumentation und Inspektionszertifikat"
@@ -345,24 +297,6 @@ export const translations = {
         available: {
           title: "Auch in dringenden Fällen erreichbar",
           desc: "Kann an Wochenenden und Feiertagen angerufen werden"
-        }
-      }
-    },
-    trust: {
-      label: "Wichtige Informationen",
-      title: "Alles, was Sie wissen sollten",
-      items: {
-        payment: {
-          title: "Zahlungsmöglichkeiten",
-          desc: "Barzahlung und Bankkarte werden akzeptiert."
-        },
-        docs: {
-          title: "Lizenzen & Dokumentation",
-          desc: "Lizenziert. Ausführung nach MSZ EN 60439 Standard. Vertrag, Rechnung und Prüfprotokoll zu jedem Auftrag."
-        },
-        warranty: {
-          title: "Garantie & Renovierung",
-          desc: "Ich gebe Garantie auf alle Arbeiten und arbeite mit eigenen Werkzeugen. Ich übernehme auch Renovierungen im gesamten EU-Gebiet — Sie können überall auf mich zählen."
         }
       }
     },
