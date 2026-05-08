@@ -6,12 +6,54 @@ import { translations, LANGUAGES, type Language } from "@/lib/translations";
 
 const ICON_SERVICES = ["🏠", "🏭", "🔌", "💡", "☀️", "🚨"];
 const FOOTER_SOCIALS = [
-  { label: "Facebook", icon: "f", href: "https://facebook.com" },
-  { label: "Instagram", icon: "◎", href: "https://instagram.com" },
-  { label: "TikTok", icon: "♪", href: "https://tiktok.com" },
-  { label: "YouTube", icon: "▶", href: "https://youtube.com" },
-  { label: "WhatsApp", icon: "✆", href: "https://whatsapp.com" }
+  { label: "Facebook", href: "https://facebook.com" },
+  { label: "Instagram", href: "https://instagram.com" },
+  { label: "TikTok", href: "https://tiktok.com" },
+  { label: "YouTube", href: "https://youtube.com" },
+  { label: "WhatsApp", href: "https://whatsapp.com" }
 ];
+
+function SocialIcon({ name }: { name: string }) {
+  const common = { width: 20, height: 20, fill: 'none', stroke: 'currentColor', strokeWidth: 1.6 };
+  switch (name) {
+    case 'Facebook':
+      return (
+        <svg viewBox="0 0 24 24" width={20} height={20} aria-hidden>
+          <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.14h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.794.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.587l-.467 3.567h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z" fill="currentColor"/>
+        </svg>
+      );
+    case 'Instagram':
+      return (
+        <svg viewBox="0 0 24 24" width={20} height={20} aria-hidden>
+          <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6" fill="none" />
+          <circle cx="12" cy="12" r="3.2" stroke="currentColor" strokeWidth="1.6" fill="none" />
+          <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+        </svg>
+      );
+    case 'TikTok':
+      return (
+        <svg viewBox="0 0 24 24" width={20} height={20} aria-hidden>
+          <path d="M12 2v12.1a3.9 3.9 0 1 0 3.9 3.9V9.6h3.1V6.7h-3.1V2H12z" fill="currentColor"/>
+        </svg>
+      );
+    case 'YouTube':
+      return (
+        <svg viewBox="0 0 24 24" width={20} height={20} aria-hidden>
+          <path d="M23 7.5a3 3 0 0 0-2.1-2.12C18.7 4.9 12 4.9 12 4.9s-6.7 0-8.9.48A3 3 0 0 0 1 7.5 31.7 31.7 0 0 0 1 12a31.7 31.7 0 0 0 .1 4.5 3 3 0 0 0 2.1 2.12C5.3 19.1 12 19.1 12 19.1s6.7 0 8.9-.48A3 3 0 0 0 23 16.5 31.7 31.7 0 0 0 23 12a31.7 31.7 0 0 0 0-4.5z" fill="currentColor"/>
+          <path d="M10 15V9l6 3-6 3z" fill="#fff" opacity="0.95"/>
+        </svg>
+      );
+    case 'WhatsApp':
+      return (
+        <svg viewBox="0 0 24 24" width={20} height={20} aria-hidden>
+          <path d="M20.5 3.5A11 11 0 0 0 3.6 18.4L3 21l2.7-.7A11 11 0 1 0 20.5 3.5z" stroke="currentColor" strokeWidth="1.2" fill="none"/>
+          <path d="M17.2 14.1c-.4-.2-2.3-1.1-2.7-1.2-.4-.1-.7-.2-1 .2-.3.4-1.1 1.2-1.3 1.4-.2.3-.4.4-.8.1-.4-.2-1.6-.6-3-1.8-1.1-1-1.8-2.3-2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.3-.7.1-.3 0-.6 0-.8s-.9-1.8-1.3-2.4c-.3-.6-.6-.5-.9-.5-.4 0-.9 0-1.4 0s-1 .1-1.5.6c-.5.5-.9 1.2-1 2-.1.8.5 2.3 1.4 3.7 1 1.4 2.3 2.7 4.1 3.6 1.8.9 3.4 1.1 4 1.2.6.1 1.6.1 2.2-.4.6-.5 1.4-1.3 1.6-2.2.2-.9.2-1.6-.2-1.8z" fill="currentColor"/>
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
 
 type SectionId = "kezdolap" | "rolam" | "szolgaltatasok" | "munkak" | "kapcsolat";
 
@@ -517,7 +559,7 @@ export default function Home() {
                   aria-label={social.label}
                   title={social.label}
                 >
-                  <span>{social.icon}</span>
+                  <SocialIcon name={social.label} />
                 </a>
               ))}
             </div>

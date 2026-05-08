@@ -465,28 +465,29 @@ footer a:hover { color: var(--accent); }
 }
 .footer-socials {
   display: flex;
-  flex-wrap: wrap;
+  gap: 14px;
   justify-content: center;
-  gap: 16px;
+  align-items: center;
 }
 .footer-social {
-  width: 68px;
-  height: 68px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.72);
-  background: rgba(255,255,255,.02);
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.62);
+  background: rgba(255,255,255,0.02);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  transition: transform .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease), background .2s var(--ease);
+  font-size: 20px;
+  transition: transform .18s var(--ease), border-color .18s var(--ease), color .18s var(--ease), background .18s var(--ease);
 }
+.footer-social svg { width: 20px; height: 20px; display: block; }
 .footer-social:hover {
   transform: translateY(-2px);
-  border-color: rgba(255,255,255,.28);
+  border-color: rgba(255,255,255,0.22);
   color: #fff;
-  background: rgba(255,255,255,.05);
+  background: rgba(255,255,255,0.03);
 }
 .copy { font-size: 12px !important; margin-top: 8px; }
 
