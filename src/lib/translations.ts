@@ -26,7 +26,7 @@ export const translations = {
       },
       subtitle: "villanyszerelő",
       master: "",
-      description: "12 éve végzek lakóépületi és ipari villamossági munkákat. Engedéllyel, garanciával, pontosan.",
+      description: "⚡ Több mint 5 év tapasztalat lakossági és ipari villanyszerelésben.\nPrecíz munkavégzés, garancia és gyors kiszállás.",
       callableHours: "Hívható hétköznapokon 7–18 óráig",
       completedWorks: "elvégzett munka",
       yearsExperience: "év tapasztalat",
