@@ -46,9 +46,9 @@ export const translations = {
       name: "Balogh Krisztián",
       title: "villanyszerelő",
       description1:
-        "1994 óta foglalkozom villanyszerelő munkával. Budapesten és a város 40 km-es körzetében dolgozom — lakásoktól, házaktól egészen irodákig és ipari létesítményekig.",
+        "2020 óta foglalkozom lakossági és ipari villanyszereléssel az ország egész területén.",
       description2:
-        "Minden munkát személyesen végzek, dokumentálok és megvizsgálok. Az ügyfeleimnek fontos, hogy biztonsággal beköltözhessenek vagy beköthessék az üzemet — nekem ez az elsődleges szempont.",
+        "Lakások, családi házak, irodák és ipari létesítmények teljes körű villamos kivitelezését vállalom. Minden munkát precízen és megbízhatóan végzek, kiemelt figyelmet fordítva a biztonságra és a minőségi kivitelezésre. Fontos számomra, hogy ügyfeleim hosszú távon is biztonságos és stabil elektromos rendszert használhassanak.",
       badges: {
         authorized: {
           title: "Pontos kivitelezés",
