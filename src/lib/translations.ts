@@ -186,9 +186,9 @@ export const translations = {
       name: "Balogh Krisztián",
       title: "electrician",
       description1:
-        "I have been working as an electrician since 1994. I work in Budapest and the surrounding 40 km area — from apartments and houses to offices and industrial facilities.",
+        "Since 2020, I have been doing residential and industrial electrical work across the whole country.",
       description2:
-        "I do every job personally, document and inspect it. It is important to my clients that they can move in safely or connect the operation — that is my primary concern.",
+        "I undertake complete electrical installations for apartments, family houses, offices and industrial facilities. I carry out every job precisely and reliably, with a strong focus on safety and quality workmanship. My goal is for clients to use a safe and stable electrical system in the long term.",
       badges: {
         authorized: {
           title: "Careful workmanship",
@@ -326,9 +326,9 @@ export const translations = {
       name: "Balogh Krisztián",
       title: "Elektriker",
       description1:
-        "Seit 1994 arbeite ich als Elektriker. Ich arbeite in Budapest und der umliegenden 40 km-Zone — von Wohnungen und Häusern bis zu Büros und Industrieanlangen.",
+        "Seit 2020 führe ich Wohn- und Industrieelektroarbeiten im ganzen Land durch.",
       description2:
-        "Ich führe jede Arbeit persönlich durch, dokumentiere und prüfe sie. Meinen Kunden ist es wichtig, dass sie sicher einziehen oder den Betrieb anschließen können — das ist meine oberste Priorität.",
+        "Ich übernehme komplette Elektroinstallationen für Wohnungen, Einfamilienhäuser, Büros und Industrieanlagen. Jede Arbeit führe ich präzise und zuverlässig aus, mit besonderem Fokus auf Sicherheit und hochwertige Ausführung. Mein Ziel ist, dass meine Kunden langfristig ein sicheres und stabiles elektrisches System nutzen können.",
       badges: {
         authorized: {
           title: "Sorgfältige Ausführung",
