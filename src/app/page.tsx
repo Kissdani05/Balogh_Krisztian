@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/lib/useLanguage";
 import { translations, LANGUAGES, type Language } from "@/lib/translations";
 
-const ICON_SERVICES = ["🏠", "🏭", "🔌", "💡", "☀️", "🚨"];
+const ICON_SERVICES = ["🏠", "🏭", "🔌", "💡", "🔎", "🚨"];
 const FOOTER_SOCIALS = [
   { label: "Facebook", href: "https://facebook.com" },
   { label: "Instagram", href: "https://instagram.com" },
@@ -68,6 +68,12 @@ export default function Home() {
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
   const countedRef = useRef(false);
+
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
+    setLangDropdownOpen(false);
+    setMobileMenuOpen(false);
+  };
 
   // Scroll handler for nav
   useEffect(() => {
@@ -154,7 +160,7 @@ export default function Home() {
       (entries) => {
         if (entries[0].isIntersecting && !countedRef.current) {
           countedRef.current = true;
-          const data = [350, 12, 98];
+          const data = [150, 5, 98];
 
           data.forEach((target, i) => {
             setTimeout(() => {
@@ -258,6 +264,24 @@ export default function Home() {
                 {t.nav.callNow}
               </a>
             </li>
+            <li className="nav-mobile-language">
+              <span className="nav-mobile-language-label">Nyelv</span>
+              <div className="nav-mobile-language-options">
+                {(Object.keys(LANGUAGES) as Language[]).map((lang) => (
+                  <button
+                    key={lang}
+                    type="button"
+                    onClick={() => handleLanguageChange(lang)}
+                    className={`nav-mobile-language-btn ${language === lang ? "active" : ""}`}
+                    aria-pressed={language === lang}
+                    aria-label={LANGUAGES[lang].name}
+                  >
+                    <span className="lang-flag">{LANGUAGES[lang].flag}</span>
+                    <span>{LANGUAGES[lang].name}</span>
+                  </button>
+                ))}
+              </div>
+            </li>
           </ul>
 
           {/* Language Switcher - Dropdown Menu */}
@@ -276,10 +300,8 @@ export default function Home() {
                 {(Object.keys(LANGUAGES) as Language[]).map((lang) => (
                   <button
                     key={lang}
-                    onClick={() => {
-                      setLanguage(lang);
-                      setLangDropdownOpen(false);
-                    }}
+                    type="button"
+                    onClick={() => handleLanguageChange(lang)}
                     className={`lang-option ${language === lang ? "active" : ""}`}
                     title={LANGUAGES[lang].name}
                   >
@@ -342,7 +364,7 @@ export default function Home() {
         </div>
         <div className="hero-img reveal-right">
           <img
-            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=85&auto=format&fit=crop"
+            src="/PNG%20to%20WEBP%20Conversion.webp"
             alt="Balogh Krisztián villanyszerelő munkában"
           />
           <div className="hero-stats" ref={statsRef}>
@@ -383,7 +405,7 @@ export default function Home() {
         <div className="container about-inner">
           <div className="about-img-wrap reveal-left">
             <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=85&auto=format&fit=crop"
+              src="/PNG%20to%20WEBP.bd5.webp"
               alt="Elektromos panel"
             />
           </div>
@@ -483,29 +505,29 @@ export default function Home() {
           <div className="gallery-grid">
             <div className="gitem g-tall reveal">
               <img
-                src="https://images.unsplash.com/photo-1605152276897-4f618f831968?w=800&q=85&auto=format&fit=crop"
-                alt="Elosztótábla"
+                src="/PNG%20to%20WEBP.bd1.webp"
+                alt={t.gallery.items[0].title}
               />
               <div className="gcap">{t.gallery.items[0].title}</div>
             </div>
             <div className="gitem reveal">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=85&auto=format&fit=crop"
-                alt="Irodai munka"
+                src="/PNG%20to%20WEBP.bd2.webp"
+                alt={t.gallery.items[1].title}
               />
               <div className="gcap">{t.gallery.items[1].title}</div>
             </div>
             <div className="gitem reveal">
               <img
-                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=85&auto=format&fit=crop"
-                alt="LED világítás"
+                src="/PNG%20to%20WEBP.bd3.webp"
+                alt={t.gallery.items[2].title}
               />
               <div className="gcap">{t.gallery.items[2].title}</div>
             </div>
             <div className="gitem g-wide reveal">
               <img
-                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=85&auto=format&fit=crop"
-                alt="Napelem"
+                src="/PNG%20to%20WEBP.bd4.webp"
+                alt={t.gallery.items[3].title}
               />
               <div className="gcap">{t.gallery.items[3].title}</div>
             </div>
@@ -542,8 +564,8 @@ export default function Home() {
               <div className="ccard-icon">🕐</div>
               <div className="ccard-text">
                 <strong>{t.contact.hours}</strong>
-                <span>{t.contact.workHours}</span>
-                <small>{t.contact.workHoursDetail}</small>
+                {t.contact.workHours ? <span>{t.contact.workHours}</span> : null}
+                {t.contact.workHoursDetail ? <small>{t.contact.workHoursDetail}</small> : null}
               </div>
             </div>
             <div className="ccard">
@@ -562,7 +584,7 @@ export default function Home() {
       <footer>
         <div className="container footer-inner">
           <p className="footer-name">{t.footer.name}</p>
-          <p>Budapest és vonzáskörzete · <a href="tel:+36309401184">+36 30 940 1184</a></p>
+          <p>{t.footer.location} · <a href="tel:+36309401184">+36 30 940 1184</a></p>
           <div className="footer-socials">
             <a href="#" className="fsoc" aria-label="Facebook">
               <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>

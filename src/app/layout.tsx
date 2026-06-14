@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -20,6 +21,11 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <Script
+          src="https://statisztika.bdsystem.hu/script.js"
+          data-website-id="8255307d-4a64-4fc7-808a-773a8ceda900"
+          strategy="afterInteractive"
+        />
       </head>
       <body>{children}</body>
     </html>

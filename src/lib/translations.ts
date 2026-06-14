@@ -17,7 +17,7 @@ export const translations = {
       callNow: "📞 Hívjon most"
     },
     hero: {
-      location: "Budapest és vonzáskörzete",
+      location: "Magyarország és vonzáskörzete",
       title: "Megbízható",
       badges: {
         payment: "Bankkártyás fizetés lehetséges",
@@ -27,7 +27,7 @@ export const translations = {
       subtitle: "villanyszerelő",
       master: "",
       description: "⚡ Több mint 5 év tapasztalat lakossági és ipari villanyszerelésben.\nPrecíz munkavégzés, garancia és gyors kiszállás.",
-      callableHours: "Hívható hétköznapokon 7–18 óráig",
+      callableHours: "Hívható a hét minden napján éjjel-nappal",
       completedWorks: "elvégzett munka",
       yearsExperience: "év tapasztalat",
       satisfiedClients: "elégedett ügyfél"
@@ -107,8 +107,8 @@ export const translations = {
           desc: "Beltéri és kültéri világítás tervezése és szerelése, energiatakarékos LED rendszerek kialakítása."
         },
         {
-          title: "Napelem és töltőállomás",
-          desc: "Fotovoltaikus rendszerek hálózatra kötése, inverteres telepítés, elektromos autó töltők beszerelése."
+          title: "Állapotfelmérés és hibakeresés",
+          desc: "Helyszíni felmérés, mérések és hibakeresés lakásokban, családi házakban és kisebb üzletekben."
         },
         {
           title: "Sürgősségi hibaelhárítás",
@@ -120,10 +120,10 @@ export const translations = {
       label: "Referenciák",
       title: "Korábbi munkáim",
       items: [
-        { title: "Elosztótábla felújítás" },
-        { title: "Irodai hálózat kiépítés" },
-        { title: "LED világítás telepítés" },
-        { title: "Napelem rendszer bekötés" }
+        { title: "Hálózati rack szekrény" },
+        { title: "Ipari tűzjelző központ" },
+        { title: "Elektromos elosztószekrény kismegszakítókkal" },
+        { title: "Díszes mennyezeti világítás" }
       ]
     },
     contact: {
@@ -134,16 +134,16 @@ export const translations = {
       area: "Munkaterület",
       hours: "Munkaidő",
       communication: "Egyeztetés",
-      phoneTime: "Hétfő–Szombat, 7–18 óra",
-      areaDesc: "és 40 km-es körzeten belül",
-      workHours: "Hétfő – Szombat",
-      workHoursDetail: "7:00 – 18:00 · Sürgős esetben hétvégén is",
+      phoneTime: "Hívható a hét minden napján éjjel-nappal",
+      areaDesc: "Magyarország területén, de Európa-szinten is",
+      workHours: "Hívható a hét minden napján éjjel-nappal",
+      workHoursDetail: "",
       callOrSms: "Hívjon, írjon SMS-t",
       callBack: "Visszahívom, ha nem érek rá"
     },
     footer: {
       name: "Balogh Krisztián — Villanyszerelő",
-      location: "Budapest és vonzáskörzete",
+      location: "Magyarország és vonzáskörzete",
       copyright: "© 2026 · Minden jog fenntartva"
     }
   },
@@ -157,7 +157,7 @@ export const translations = {
       callNow: "📞 Call Now"
     },
     hero: {
-      location: "Budapest and surroundings",
+      location: "Hungary and its surroundings",
       title: "Reliable",
       badges: {
         payment: "Card payments accepted",
@@ -167,7 +167,7 @@ export const translations = {
       subtitle: "electrician",
       master: "",
       description: "⚡ More than 5 years of experience in residential and industrial electrical work.\nPrecise workmanship, warranty and fast service.",
-      callableHours: "Available weekdays 7–18",
+      callableHours: "Available 24/7",
       completedWorks: "completed works",
       yearsExperience: "years experience",
       satisfiedClients: "satisfied clients"
@@ -247,8 +247,8 @@ export const translations = {
           desc: "Design and installation of indoor and outdoor lighting, development of energy-saving LED systems."
         },
         {
-          title: "Solar panels and charging station",
-          desc: "Grid connection of photovoltaic systems, inverter installation, installation of electric car chargers."
+          title: "Inspection and troubleshooting",
+          desc: "On-site surveys, measurements and troubleshooting for apartments, family houses and smaller shops."
         },
         {
           title: "Emergency troubleshooting",
@@ -260,10 +260,10 @@ export const translations = {
       label: "References",
       title: "Previous works",
       items: [
-        { title: "Circuit breaker renovation" },
-        { title: "Office network installation" },
-        { title: "LED lighting installation" },
-        { title: "Solar system connection" }
+        { title: "Network rack cabinet" },
+        { title: "Industrial fire alarm control panel" },
+        { title: "Electrical distribution cabinet with circuit breakers" },
+        { title: "Decorative ceiling lighting" }
       ]
     },
     contact: {
@@ -274,16 +274,16 @@ export const translations = {
       area: "Work area",
       hours: "Working hours",
       communication: "Communication",
-      phoneTime: "Monday–Saturday, 7–18",
-      areaDesc: "and within 40 km radius",
-      workHours: "Monday – Saturday",
-      workHoursDetail: "7:00 – 18:00 · Available on weekends in urgent cases",
+      phoneTime: "Available 24/7",
+      areaDesc: "Throughout Hungary, and across Europe as well",
+      workHours: "Available 24/7",
+      workHoursDetail: "",
       callOrSms: "Call or send SMS",
       callBack: "I'll call back if I'm not available"
     },
     footer: {
       name: "Balogh Krisztián — Electrician",
-      location: "Budapest and surroundings",
+      location: "Hungary and its surroundings",
       copyright: "© 2026 · All rights reserved"
     }
   },
@@ -297,7 +297,7 @@ export const translations = {
       callNow: "📞 Jetzt Anrufen"
     },
     hero: {
-      location: "Budapest und Umgebung",
+      location: "Ungarn und Umgebung",
       title: "Zuverlässiger",
       badges: {
         payment: "Kartenzahlung möglich",
@@ -307,7 +307,7 @@ export const translations = {
       subtitle: "Elektriker",
       master: "",
       description: "⚡ Mehr als 5 Jahre Erfahrung in der Wohn- und Industrieelektrik.\nPräzise Arbeit, Garantie und schnelle Anfahrt.",
-      callableHours: "Erreichbar werktags 7–18 Uhr",
+      callableHours: "Rund um die Uhr erreichbar",
       completedWorks: "abgeschlossene Arbeiten",
       yearsExperience: "Jahre Erfahrung",
       satisfiedClients: "zufriedene Kunden"
@@ -387,8 +387,8 @@ export const translations = {
           desc: "Design und Installation von Innen- und Außenbeleuchtung, Entwicklung energiesparender LED-Systeme."
         },
         {
-          title: "Solaranlage und Ladestation",
-          desc: "Netzanbindung von Photovoltaikanlagen, Wechselrichterinstallation, Installation von Elektroautobatterien."
+          title: "Bestandsaufnahme und Fehlersuche",
+          desc: "Vor-Ort-Besichtigung, Messungen und Fehlersuche in Wohnungen, Einfamilienhäusern und kleineren Geschäften."
         },
         {
           title: "Notfall-Fehlerbehebung",
@@ -400,10 +400,10 @@ export const translations = {
       label: "Referenzen",
       title: "Frühere Arbeiten",
       items: [
-        { title: "Schalter renovierung" },
-        { title: "Büronetzwerk-Installation" },
-        { title: "LED-Beleuchtungsinstallation" },
-        { title: "Solaranlage-Verbindung" }
+        { title: "Netzwerk-Rackschrank" },
+        { title: "Industrielle Brandmeldezentrale" },
+        { title: "Elektro-Verteilerkasten mit Leitungsschutzschaltern" },
+        { title: "Dekorative Deckenbeleuchtung" }
       ]
     },
     contact: {
@@ -414,16 +414,16 @@ export const translations = {
       area: "Arbeitsgebiet",
       hours: "Arbeitszeit",
       communication: "Kommunikation",
-      phoneTime: "Montag–Samstag, 7–18 Uhr",
-      areaDesc: "und im Umkreis von 40 km",
-      workHours: "Montag – Samstag",
-      workHoursDetail: "7:00 – 18:00 · In dringenden Fällen auch am Wochenende erreichbar",
+      phoneTime: "Rund um die Uhr erreichbar",
+      areaDesc: "In ganz Ungarn, aber auch europaweit",
+      workHours: "Rund um die Uhr erreichbar",
+      workHoursDetail: "",
       callOrSms: "Rufen Sie an oder senden Sie SMS",
       callBack: "Ich rufe zurück, wenn ich nicht verfügbar bin"
     },
     footer: {
       name: "Balogh Krisztián — Elektriker",
-      location: "Budapest und Umgebung",
+      location: "Ungarn und Umgebung",
       copyright: "© 2026 · Alle Rechte vorbehalten"
     }
   }
