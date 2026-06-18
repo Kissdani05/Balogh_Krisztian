@@ -27,7 +27,36 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://files.bpcontent.cloud/2026/06/17/21/20260617211858-MH14LM8J.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="botpress-event"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function waitForBP() {
+                if (window.botpressWebChat && window.botpressWebChat.onEvent) {
+                  window.botpressWebChat.onEvent(function (event) {
+                    if (event.type === 'UI.OPENED') {
+                      window.botpressWebChat.sendEvent({ type: 'chat_megnyitva' });
+                    }
+                  });
+                } else {
+                  setTimeout(waitForBP, 100);
+                }
+              })();
+            `
+          }}
+        />
+      </body>
     </html>
   );
 }
