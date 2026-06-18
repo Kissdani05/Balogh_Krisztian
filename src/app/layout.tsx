@@ -42,17 +42,15 @@ export default function RootLayout({
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              (function waitForBP() {
-                if (window.botpressWebChat && window.botpressWebChat.onEvent) {
+              window.addEventListener('load', function() {
+                if (window.botpressWebChat) {
                   window.botpressWebChat.onEvent(function (event) {
                     if (event.type === 'UI.OPENED') {
-                      window.botpressWebChat.sendEvent({ type: 'chat_megnyitva' });
+                      window.botpressWebChat.sendEvent({ type: 'proactive-trigger' });
                     }
-                  });
-                } else {
-                  setTimeout(waitForBP, 100);
+                  }, ['UI.OPENED']);
                 }
-              })();
+              });
             `
           }}
         />
