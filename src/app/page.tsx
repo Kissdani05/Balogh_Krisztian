@@ -553,7 +553,7 @@ export default function Home() {
               <div className="ccard-icon">📍</div>
               <div className="ccard-text">
                 <strong>{t.contact.area}</strong>
-                <span>Budapest</span>
+                <span>{t.contact.areaCity}</span>
                 <small>{t.contact.areaDesc}</small>
               </div>
             </div>

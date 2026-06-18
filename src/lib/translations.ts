@@ -17,7 +17,7 @@ export const translations = {
       callNow: "📞 Hívjon most"
     },
     hero: {
-      location: "Magyarország és vonzáskörzete",
+      location: "Magyarország területén",
       title: "Megbízható",
       badges: {
         payment: "Bankkártyás fizetés lehetséges",
@@ -135,6 +135,7 @@ export const translations = {
       hours: "Munkaidő",
       communication: "Egyeztetés",
       phoneTime: "Hívható a hét minden napján éjjel-nappal",
+      areaCity: "Magyarország területén",
       areaDesc: "Magyarország területén, de Európa-szinten is",
       workHours: "Hívható a hét minden napján éjjel-nappal",
       workHoursDetail: "",
@@ -143,7 +144,7 @@ export const translations = {
     },
     footer: {
       name: "Balogh Krisztián — Villanyszerelő",
-      location: "Magyarország és vonzáskörzete",
+      location: "Magyarország területén",
       copyright: "© 2026 · Minden jog fenntartva"
     }
   },
@@ -157,7 +158,7 @@ export const translations = {
       callNow: "📞 Call Now"
     },
     hero: {
-      location: "Hungary and its surroundings",
+      location: "Within Hungary",
       title: "Reliable",
       badges: {
         payment: "Card payments accepted",
@@ -275,6 +276,7 @@ export const translations = {
       hours: "Working hours",
       communication: "Communication",
       phoneTime: "Available 24/7",
+      areaCity: "Throughout Hungary",
       areaDesc: "Throughout Hungary, and across Europe as well",
       workHours: "Available 24/7",
       workHoursDetail: "",
@@ -283,7 +285,7 @@ export const translations = {
     },
     footer: {
       name: "Balogh Krisztián — Electrician",
-      location: "Hungary and its surroundings",
+      location: "Within Hungary",
       copyright: "© 2026 · All rights reserved"
     }
   },
@@ -297,7 +299,7 @@ export const translations = {
       callNow: "📞 Jetzt Anrufen"
     },
     hero: {
-      location: "Ungarn und Umgebung",
+      location: "Innerhalb Ungarns",
       title: "Zuverlässiger",
       badges: {
         payment: "Kartenzahlung möglich",
@@ -415,6 +417,7 @@ export const translations = {
       hours: "Arbeitszeit",
       communication: "Kommunikation",
       phoneTime: "Rund um die Uhr erreichbar",
+      areaCity: "In ganz Ungarn",
       areaDesc: "In ganz Ungarn, aber auch europaweit",
       workHours: "Rund um die Uhr erreichbar",
       workHoursDetail: "",
@@ -423,7 +426,7 @@ export const translations = {
     },
     footer: {
       name: "Balogh Krisztián — Elektriker",
-      location: "Ungarn und Umgebung",
+      location: "Innerhalb Ungarns",
       copyright: "© 2026 · Alle Rechte vorbehalten"
     }
   }
